@@ -1,0 +1,11 @@
+<section class="fondo">
+    <h3 class="titulo">Nuevo Modulo</h3>
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+      <div>
+        <label for="Nombre">Nombre modulo:</label>
+        <input type="text" [(ngModel)]="newmodulo.nombreModulo" name="Nombre" id="Nombre" >
+      </div>
+      <div><button class="btalta" [disabled]="!myForm.valid">Alta modulo</button></div>
+    </form>
+    
+  </section>

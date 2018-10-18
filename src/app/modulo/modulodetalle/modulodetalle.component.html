@@ -1,0 +1,33 @@
+
+<form class="fondo" #myForm="ngForm" (ngSubmit)="onSubmitDelete(myForm)">
+  <article *ngIf="moduloSeleccionado">
+    <h3>Detalle del modulo</h3>
+    <p>Id: {{moduloSeleccionado.idm}}</p>
+    <p>Descripción: {{moduloSeleccionado.nombreModulo}}</p>
+    <div><button class="btelininar" [disabled]="!myForm.valid">Eliminar modulo</button></div>
+  </article>
+  
+  </form>
+  
+
+
+<section class="fondo">
+  <h3>modificar modulo</h3>
+  <form #myFormModi="ngForm" (ngSubmit)="onSubmitModi(myFormModi)">
+    <div>
+      <label for="idm">ID:</label>
+      <input type="text" [(ngModel)]="moduloSeleccionado.idm" name="idm" id="idm" value={{moduloSeleccionado.idm}} >
+    </div>
+    <div>
+      <label for="Nombre">Nombre modulo:</label>
+      <input type="text" [(ngModel)]="moduloSeleccionado.nombreModulo" name="Nombre" id="Nombre" value={{moduloSeleccionado.nombreModulo}}  >
+    </div>
+    <div><button class="btmodificar" [disabled]="!myFormModi.valid">Modificar modulo</button></div>
+   
+  </form>
+</section>
+
+<p>
+  <a class="enlace" [routerLink]="['/cursos/',idCurso,'modulos']">[<--]Volver</a>
+</p>
+

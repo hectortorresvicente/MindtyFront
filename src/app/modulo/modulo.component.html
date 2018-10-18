@@ -1,0 +1,28 @@
+<h2>Modulos</h2>
+<hr>
+<div>
+  <table class="tabla">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let unM of modulos ">
+        <td>{{unM.idm}}</td>
+        <td>
+          <a [routerLink]="['/cursos/',idCurso,'modulos',unM.idm]">{{unM.nombreModulo}}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <a [routerLink]="['/cursos/',idCurso,'modulos','new']">
+    <button type="button" class="btn btn-primary btn-block btn-lg">
+      Añadir módulo
+    </button>
+  </a>
+</div>
+<br>

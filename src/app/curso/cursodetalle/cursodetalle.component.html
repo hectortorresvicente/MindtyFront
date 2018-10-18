@@ -1,0 +1,33 @@
+<form class="fondo" #myForm="ngForm" (ngSubmit)="onSubmitDelete(myForm)">
+  <article *ngIf="cursoSeleccionado">
+    <h3>Detalle del curso</h3>
+    <p>Id: {{cursoSeleccionado.idCurso}}</p>
+    <p>Codigo curso: {{cursoSeleccionado.codCurso}}</p>
+    <p>nombre curso: {{cursoSeleccionado.nombreCurso}}</p>
+    <p>horas curso: {{cursoSeleccionado.horasCurso}}</p>
+    <p>formador: {{cursoSeleccionado.formador}}</p>
+    <div><button class="btelininar" [disabled]="!myForm.valid">Eliminar Curso</button></div>
+  </article>
+  
+  </form>
+
+
+  <section class="fondo">
+    <h3>modificar Curso</h3>
+    <form #myFormModi="ngForm" (ngSubmit)="onSubmitModi(myFormModi)">
+      <div>
+        <label for="nombre">Nombre curso:</label>
+        <input type="text" [(ngModel)]="cursoSeleccionado.nombreCurso" name="nombre" id="nombre" value={{cursoSeleccionado.nombreCurso}} >
+      </div>
+      <div>
+        <label for="Horas">Horas curso:</label>
+        <input type="text" [(ngModel)]="cursoSeleccionado.horasCurso" name="Horas" id="Horas" value={{cursoSeleccionado.horasCurso}}  >
+      </div>
+      <div><button class="btmodificar" [disabled]="!myFormModi.valid">Modificar Curso</button></div>
+     
+    </form>
+  </section>
+  
+  <p>
+    <a class="enlace" [routerLink]="['/cursos/']">[<--]Volver</a>
+  </p>

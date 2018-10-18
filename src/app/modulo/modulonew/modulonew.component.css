@@ -1,0 +1,39 @@
+input.ng-pristine {
+  border: 2px solid blue;
+}
+
+input.ng-valid {
+  border: 2px solid blue;
+}
+
+input.ng-invalid {
+  border: 2px solid red;
+}
+
+.fondo {
+    background: beige;
+    text-align: center;
+  }
+  .btalta{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 15px;
+    border: 3px double #006505;
+    margin: 20px;
+  }
+  .enlace {
+    background-color: #3669f4;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }

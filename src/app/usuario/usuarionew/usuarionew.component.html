@@ -1,0 +1,27 @@
+<section>
+  <h3>Nuevo proyecto</h3>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+     
+
+      <label for="nombreUsuario">nombreUsuario:</label>
+      <input type="text" [(ngModel)]="newUseuario.nombreUsuario" name="name" id="nombreUsuario" minlength="3" >
+
+      <label for="password">password:</label>
+      <input type="text" [(ngModel)]="newUseuario.password" name="password" id="contraseña" minlength="3" >
+
+      <label for="email">email:</label>
+      <input type="email" [(ngModel)]="newUseuario.email" name="email" id="title"  >
+
+      <label for="telefono">telefono:</label>
+      <input type="email" [(ngModel)]="newUseuario.telefono" name="telefono" id="telefono"  >
+
+      <label for="tipo">tipo:</label>
+      <input type="type" [(ngModel)]="newUseuario.tipo" name="tipo" id="tipo"  >
+
+      
+    </div>
+    <div><button [disabled]="!myForm.valid">Guardar</button></div>
+  </form>
+  {{newUseuario|json}}
+</section>

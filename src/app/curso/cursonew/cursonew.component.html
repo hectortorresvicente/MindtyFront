@@ -1,0 +1,22 @@
+<section class="fondo">
+  
+   <!-- x{{newcurso|json}}x -->
+  <h3 class="titulo">Nuevo Curso</h3>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+      <label for="Nombre">Codigo Curso:</label>
+      <input type="text" [(ngModel)]="newcurso.codCurso" name="codCurso" id="codCurso" >
+    </div>
+    <div>
+      <label for="Nombre">Nombre Curso:</label>
+      <input type="text" [(ngModel)]="newcurso.nombreCurso" name="NombreCurso" id="NombreCurso" >
+    </div>
+    <div>
+      <label for="Nombre">Horas Curso:</label>
+      <input type="text" [(ngModel)]="newcurso.horasCurso" name="HorasCurso" id="HorasCurso" >
+    </div>
+    <div><button class="btalta" [disabled]="!myForm.valid">Alta Curso</button></div>
+  </form>
+
+  
+</section>

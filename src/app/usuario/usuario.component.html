@@ -1,0 +1,30 @@
+<h2>Usuarios</h2>
+<hr>
+<div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Nombre y Apellidos</th>
+        <th scope="col">Email</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let unU of usuarios">
+        <td>
+          <a [routerLink]="['/usuarios',unU.idu]">{{unU.nombreUsuario}}</a>
+        </td>
+        <td>{{unU.email}}</td>
+        <td>{{unU.telefono}}</td>
+        <td>{{unU.tipo}}</td>
+      </tr>
+    </tbody>
+  </table>
+    <br>
+    <br>
+    <a [routerLink]="['/usuarios/new']"><button type="button" class="btn btn-primary btn-block btn-lg">
+      Añadir usuario
+    </button></a>
+</div>
+<br>

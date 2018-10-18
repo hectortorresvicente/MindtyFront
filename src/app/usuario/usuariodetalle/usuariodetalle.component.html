@@ -1,0 +1,106 @@
+<div>
+  <h1>Aqui se puede actualizar un usuario</h1>
+
+
+
+  <div *ngIf="unUsuario">
+    <h3>Detalle de usuario</h3>
+    <p>Id: {{unUsuario.idu}}</p>
+    <p>Contraseña: {{unUsuario.password}}</p>
+    <p>Nombre: {{unUsuario.nombreUsuario}}</p>
+    <p>Email: {{unUsuario.email}}</p>
+    <p>Telefono: {{unUsuario.telefono}}</p>
+    <p>Tipo: {{unUsuario.tipo}}</p>
+    <p>
+
+      <button class="delete" title="delete unUsuario" (click)="delete(unUsuario)">Eliminar</button>
+    </p>
+  </div>
+<h1>Modificar Datos</h1>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+      
+        <label for="idu">Id:</label>
+        <input type="number" [(ngModel)]="editUsuario.idu" name="idu" id="idu" minlength="1" readonly="readonly">
+        <br>
+
+      <label for="nombreUsuario">nombreUsuario:</label>
+      <input type="text" [(ngModel)]="editUsuario.nombreUsuario" name="name" id="nombreUsuario" minlength="3" >
+      <br>
+
+      <label for="password">password:</label>
+      <input type="text" [(ngModel)]="editUsuario.password" name="password" id="contraseña" minlength="3" >
+      <br>
+
+      <label for="email">email:</label>
+      <input type="email" [(ngModel)]="editUsuario.email" name="email" id="title"  >
+      <br>
+
+      <label for="telefono">telefono:</label>
+      <input type="email" [(ngModel)]="editUsuario.telefono" name="telefono" id="telefono"  >
+      <br>
+
+      <label for="tipo">tipo:</label>
+      <input type="type" [(ngModel)]="editUsuario.tipo" name="tipo" id="tipo"  >
+      <br>
+
+      
+    </div>
+    <div><button [disabled]="!myForm.valid">Guardar</button></div>
+  </form>
+
+
+
+
+  <!-- <div> -->
+    <!-- Nombre:
+    <input *ngIf="unUsuario!==editUsuario" value="{{unUsuario.nombreUsuario}}"> {{unUsuario.nombreUsuario}} -->
+    <!-- <div *ngIf="editUsuario"> -->
+      <!-- <a (click)="edit(editUsuario.nombreUsuario)"> -->
+      <!-- <p>Nombre: {{editUsuario.nombreUsuario}}</p> -->
+      <!-- </a> -->
+    <!-- </div>
+    <div *ngIf="unUsuario"> -->
+      <!-- <a (click)="edit(hero)"> -->
+        <!-- <span *ngIf="unUsuario.nombreUsuario!==editUsuario.nombreUsuario">{{unUsuario.nombreUsuario}}</span>
+        <input *ngIf="unUsuario.nombreUsuario===editUsuario.nombreUsuario " [(ngModel)]="hero.name" (blur)="update()" (keyup.enter)="update()"> -->
+      <!-- </a> -->
+
+
+      <!-- <label>Nombre</label>
+      <input value="{{unUsuario.nombreUsuario}}"> -->
+
+    <!-- </div>
+
+    <ul class="unUsuario">
+      <li>
+        
+          <a>
+            <span *ngIf="unUsuario.nombreUsuario!==editUsuario.nombreUsuario">{{unUsuario.nombreUsuario}}</span>
+            <input *ngIf="unUsuario.nombreUsuario===editUsuario.nombreUsuario" [(ngModel)]="unUsuario.nombreUsuario">
+          </a> -->
+          <!-- <button class="delete" title="delete usu"
+          (click)="delete(usu)">x</button> -->
+        <!-- </li>
+      </ul> -->
+
+
+  
+  <!-- <div>
+     modificar lo de arriva como si fuera lo de abajo, tiene que ser un array
+    <h1>modificando</h1>
+    <ul class="usuarios">
+      <li *ngFor="let usuario of usuarios">
+        <a (click)="edit(usuario)">
+          <span class="badge">{{ usuario.idu || -1 }}</span>
+          <span *ngIf="usuario!==editUsuario">{{usuario.nombreUsuario}}</span>
+          <span *ngIf="usuario!==editUsuario">{{usuario.password}}</span>
+          <span *ngIf="usuario!==editUsuario">{{usuario.email}}</span>
+          <span *ngIf="usuario!==editUsuario">{{usuario.telefono}}</span>
+          <span *ngIf="usuario!==editUsuario">{{usuario.tipo}}</span>
+          <input *ngIf="usuario===editUsuario" [(ngModel)]="usuario.name" (blur)="update()" (keyup.enter)="update()">
+        </a>
+
+      </li>
+    </ul>
+  </div> -->
